@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+{{ partial "page-header.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center" data-aos="fade-in">
+      <div class="col-lg-8">
+        {{$lastupdatedate := .Params.policy_lastupdate | time.Format "Jan 02, 2006"}}
+        <p class="mb-3 font-weight-600 text-primary">Last Edited : {{$lastupdatedate}}</p>
+        <p class="lead text-uppercase text-black-200 mb-5">{{.Params.policy_description | markdownify}}</p>
+        <div class="content">
+          <h3>Table of Contents</h3>
+          {{.TableOfContents}}
+          {{.Content}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
