@@ -2,10 +2,15 @@
 
 <section class="section">
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center align-items-center">
       <div class="col-lg-10 mx-auto text-center">
         <h1>404 Page Not Found!</h1>
-        <a href="{{site.BaseURL | relLangURL}}" class="btn btn-primary">Back To Home</a>
+        <div class="pr-0 pr-lg-5">
+          {{$img:= resources.Get "images/404/404.png" }}
+          {{$img:= $img.Resize "500x"}}
+          <img loading="lazy" decoding="async" class="img-fluid" width="{{$img.Width}}" height="{{$img.Height}}" src="{{$img.RelPermalink}}" alt="404 image" onerror="this.onerror=null;this.src='{{$img.RelPermalink}}'">
+        </div>
+        <a href="{{site.BaseURL | relLangURL}}" class="btn btn-primary mt-5">Back To Home</a>
       </div>
     </div>
   </div>
