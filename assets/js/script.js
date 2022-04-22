@@ -166,7 +166,8 @@ $(document).ready(function () {
 			}
 		});
 	}
-	brandCarousel();
+	// Quick fix: Swiper not needed on the homepage
+	// brandCarousel();
 		
 	// featuresCarousel fix
 	function featuresCarousel() {
